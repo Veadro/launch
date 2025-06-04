@@ -29,10 +29,14 @@ export class Auth {
     });
   }
 
-  async handleCallback(url: URL) {
+  async handleCallback(url: URL, codeVerifier?: string) {
     if (!this.client) throw new Error('Auth not initialized');
     const params = this.client.callbackParams(url);
-    const tokenSet: TokenSet = await this.client.callback(this.config.redirectUri, params, { code_verifier: params.code_verifier });
+    const tokenSet: TokenSet = await this.client.callback(
+      this.config.redirectUri,
+      params,
+      { code_verifier: codeVerifier || (params as any).code_verifier }
+    );
     const sessionId = generators.random();
     const session: Session = {
       id: sessionId,
@@ -45,10 +49,10 @@ export class Auth {
     return session;
   }
 
-  async validate(token: string): Promise<Session | undefined> {
+  async validate(idOrToken: string): Promise<Session | undefined> {
     if ('entries' in this.store) {
       for (const [, session] of (this.store as MemorySessionStore).entries()) {
-        if (session.accessToken === token) {
+        if (session.id === idOrToken || session.accessToken === idOrToken) {
           if (!session.expiresAt || Date.now() / 1000 < session.expiresAt) {
             return session;
           }

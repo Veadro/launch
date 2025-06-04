@@ -13,7 +13,9 @@
     "js-yaml": "^4.1.0",
     "openid-client": "^6.5.0",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "cookie": "^0.6.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/bun": "latest",
