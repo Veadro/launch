@@ -6,6 +6,7 @@
       "dependencies": {
         "openid-client": "^6.5.0",
       },
+
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -26,6 +27,7 @@
     "oauth4webapi": ["oauth4webapi@3.5.1", "", {}, "sha512-txg/jZQwcbaF7PMJgY7aoxc9QuCxHVFMiEkDIJ60DwDz3PbtXPQnrzo+3X4IRYGChIwWLabRBRpf1k9hO9+xrQ=="],
 
     "openid-client": ["openid-client@6.5.0", "", { "dependencies": { "jose": "^6.0.10", "oauth4webapi": "^3.5.1" } }, "sha512-fAfYaTnOYE2kQCqEJGX9KDObW2aw7IQy4jWpU/+3D3WoCFLbix5Hg6qIPQ6Js9r7f8jDUmsnnguRNCSw4wU/IQ=="],
+
 
     "typescript": ["typescript@5.8.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ=="],
 

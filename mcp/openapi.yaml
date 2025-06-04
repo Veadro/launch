@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: MCP API
+  version: 1.0.0
+paths:
+  /games/active:
+    get:
+      summary: List active games
+      security:
+        - OAuth: []
+      responses:
+        '200':
+          description: List of active games
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /missions:
+    post:
+      summary: Create a mission
+      security:
+        - OAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Mission created
+          content:
+            application/json:
+              schema:
+                type: object
+  /admin/commands:
+    post:
+      summary: Execute administrative command
+      security:
+        - OAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                command:
+                  type: string
+      responses:
+        '200':
+          description: Command result
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    OAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

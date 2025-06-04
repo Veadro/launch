@@ -1,5 +1,15 @@
 {
   "compilerOptions": {
+
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
     // Environment setup & latest features
     "lib": ["ESNext"],
     "target": "ESNext",
@@ -25,5 +35,11 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
+
+    "target": "es2019",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true
   }
 }
