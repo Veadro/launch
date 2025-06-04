@@ -1,5 +1,9 @@
 {
   "name": "launchserverjs",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+=======
   "module": "./src/server.ts",
   "type": "module",
   "private": true,
@@ -13,7 +17,10 @@
   },
   "peerDependencies": {
     "typescript": "^5"
-=======
+  },
+  "dependencies": {
+    "openid-client": "^6.5.0"
+
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
@@ -23,7 +30,7 @@
   "devDependencies": {
     "typescript": "^5.8.3",
     "@types/node": "^20.5.9"
-=======
+
   "description": "",
   "main": "index.js",
   "scripts": {

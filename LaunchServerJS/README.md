@@ -6,6 +6,11 @@ To install dependencies:
 bun install
 ```
 
+To run:
+
+```bash
+bun run index.ts
+=======
 To run the development server:
 
 ```bash
