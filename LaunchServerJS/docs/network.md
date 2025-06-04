@@ -1,15 +1,14 @@
 # JSON Network Protocol
 
-All messages are JSON objects with a mandatory `type` field.
+LaunchServerJS exchanges JSON messages over WebSockets. Every message contains a `type` field which identifies its purpose.
 
-## Authorise
+## Message Types
 
-Client -> Server
-```json
-{ "type": "authorise", "deviceId": "abc", "version": "1.0" }
-```
+| Name | Direction | Example |
+|------|-----------|---------|
+| `authorise` | client -> server | `{ "type": "authorise", "deviceId": "abc", "version": "1.0.0" }` |
+| `authorised` | server -> client | `{ "type": "authorised" }` |
+| `locationUpdate` | client -> server | `{ "type": "locationUpdate", "latitude": 51.5, "longitude": -0.1 }` |
+| `keepAlive` | client -> server | `{ "type": "keepAlive" }` |
 
-Server -> Client
-```json
-{ "type": "authorised" }
-```
+See the root [docs/network.md](../../docs/network.md) for full TypeScript interfaces.

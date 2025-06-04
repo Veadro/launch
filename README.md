@@ -9,7 +9,7 @@ Aspirations are to randomize player locations each week and use mars instead of 
 |--------|----------|-----------------|------|
 | `LaunchServer` | Java (Ant) | `ant run` or open in NetBeans | [HOW TO DEPLOY](LaunchServer/HOW%20TO%20DEPLOY) |
 | `LaunchClient` | Android (Java/Kotlin) | `./gradlew assembleDebug` | – |
-| `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
+| `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [network](docs/network.md) |
 | `wsbridge` | Node.js | `node server.js` | – |
 | `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
 | `server-ts` | TypeScript | `npm run build` | – |
@@ -56,6 +56,7 @@ Older versions of Launch relied on a custom binary protocol implemented in the
 offsets for each field. The new implementation uses JSON over WebSockets. This
 makes it much easier to inspect traffic and build tooling in other languages,
 while still keeping the payloads small thanks to Bun's native JSON handling.
+For a full list of message structures see [docs/network.md](docs/network.md).
 
 ## Running Tests
 
