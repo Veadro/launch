@@ -10,16 +10,15 @@ Aspirations are to randomize player locations each week and use mars instead of 
 | `LaunchServer` | Java (Ant) | `ant run` or open in NetBeans | [HOW TO DEPLOY](LaunchServer/HOW%20TO%20DEPLOY) |
 | `LaunchClient` | Android (Java/Kotlin) | `./gradlew assembleDebug` | – |
 | `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
-| `wsbridge` | Node.js | `node server.js` | – |
-| `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
-| `server-ts` | TypeScript | `npm run build` | – |
+| `LaunchServerJS/wsbridge` | Node.js | `node server.js` | – |
+| `LaunchServerJS/mcp` | Node.js Express | `node index.js` | [openapi.yaml](LaunchServerJS/mcp/openapi.yaml) |
 ## WebSocket Bridge
 
-A simple Node.js server under `wsbridge/` exposes game actions over WebSockets and
+A simple Node.js server under `LaunchServerJS/wsbridge/` exposes game actions over WebSockets and
 broadcasts JSON updates whenever in-game entities change. Run it with:
 
 ```bash
-cd wsbridge
+cd LaunchServerJS/wsbridge
 node server.js
 ```
 
@@ -69,7 +68,7 @@ Existing Java modules still contain JUnit tests under `LaunchGame/test` which
 can be run with your preferred Java IDE or with Ant/NetBeans.
 ## MCP Service
 
-The `mcp/` directory contains a lightweight Express service that exposes REST
+The `LaunchServerJS/mcp/` directory contains a lightweight Express service that exposes REST
 endpoints for managing games and missions. Endpoints are secured with a simple
 OAuth bearer token middleware. API documentation for these endpoints is
-available in `mcp/openapi.yaml`.
+available in `LaunchServerJS/mcp/openapi.yaml`.
