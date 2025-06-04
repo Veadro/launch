@@ -3,6 +3,16 @@ Real world RTS for Android
 
 Aspirations are to randomize player locations each week and use mars instead of earth for the map. Players actual GPS stays hidden and only an offset is applied to in game locations
 
+## Directory Overview
+
+| Folder | Language | How to Run/Build | Docs |
+|--------|----------|-----------------|------|
+| `LaunchServer` | Java (Ant) | `ant run` or open in NetBeans | [HOW TO DEPLOY](LaunchServer/HOW%20TO%20DEPLOY) |
+| `LaunchClient` | Android (Java/Kotlin) | `./gradlew assembleDebug` | – |
+| `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
+| `wsbridge` | Node.js | `node server.js` | – |
+| `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
+| `server-ts` | TypeScript | `npm run build` | – |
 ## WebSocket Bridge
 
 A simple Node.js server under `wsbridge/` exposes game actions over WebSockets and
