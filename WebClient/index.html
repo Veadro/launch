@@ -8,11 +8,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="header">
+    <button id="login">Login</button>
+    <span id="gold">Gold: <span id="goldValue">0</span></span>
+    <button id="chatButton">Chat</button>
+  </div>
   <div id="map"></div>
-  <div id="controls">
-    <button id="connect">Connect</button>
-    <button id="fire">Fire Missile</button>
-    <button id="intercept">Intercept</button>
+  <div id="status"></div>
+  <div id="chatModal" class="modal">
+    <div class="modal-content">
+      <div id="chatLog"></div>
+      <input type="text" id="chatInput" />
+      <button id="chatSend">Send</button>
+    </div>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j+rVvycP1UxzEfofviGEmZr3Eld4FpqM2MDYy+o=" crossorigin=""></script>
   <script src="app.js"></script>
