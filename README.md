@@ -26,7 +26,7 @@ single JavaScript bundle which can then be executed directly:
 bun build server.ts --outfile dist/server.js
 node dist/server.js
 ```
-
+ok
 ## Protocol Changes
 
 Older versions of Launch relied on a custom binary protocol implemented in the
@@ -45,3 +45,10 @@ bun test
 
 Existing Java modules still contain JUnit tests under `LaunchGame/test` which
 can be run with your preferred Java IDE or with Ant/NetBeans.
+=======
+## MCP Service
+
+The `mcp/` directory contains a lightweight Express service that exposes REST
+endpoints for managing games and missions. Endpoints are secured with a simple
+OAuth bearer token middleware. API documentation for these endpoints is
+available in `mcp/openapi.yaml`.

@@ -32,6 +32,7 @@ import launch.game.treaties.AffiliationRequest;
 import launch.game.treaties.War;
 import launch.utilities.LaunchBannedApp;
 import launch.utilities.LaunchLog;
+import launchserver.api.LaunchRESTServer;
 import static launch.utilities.LaunchLog.LogType.*;
 import storage.GameLoadSaveListener;
 import storage.XMLGameLoader;
@@ -111,7 +112,18 @@ public class LaunchServer implements LaunchServerAppInterface, GameLoadSaveListe
         else
         {
             game.StartServices();
-            
+
+            try
+            {
+                LaunchRESTServer rest = new LaunchRESTServer(game);
+                rest.start(8080);
+                LaunchLog.Log(APPLICATION, LOG_NAME, "REST API listening on port 8080.");
+            }
+            catch(Exception ex)
+            {
+                LaunchLog.Log(APPLICATION, LOG_NAME, "Failed to start REST API: " + ex.getMessage());
+            }
+
             LaunchLog.Log(APPLICATION, LOG_NAME, "...We're running.");
             
             LaunchConsole console = new LaunchConsole(this, game);
