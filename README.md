@@ -26,7 +26,6 @@ node server.js
 Incoming messages should be JSON objects with a `type` field and optional
 `payload`. Legacy message names such as `MOVE` or `FIRE` are automatically mapped
 to the new action names.
-=======
 ## Running the Bun Server
 
 The latest server implementation uses [Bun](https://bun.sh/) to provide a fast
@@ -50,7 +49,6 @@ single JavaScript bundle which can then be executed directly:
 bun build server.ts --outfile dist/server.js
 node dist/server.js
 ```
-ok
 ## Protocol Changes
 
 Older versions of Launch relied on a custom binary protocol implemented in the
