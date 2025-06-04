@@ -128,7 +128,7 @@ public class LaunchServer implements LaunchServerAppInterface, GameLoadSaveListe
             
             LaunchConsole console = new LaunchConsole(this, game);
         
-            while(!console.Quat() && game.GetRunning())
+            while(!console.Quit() && game.GetRunning())
             {
                 console.Tick();
             }
