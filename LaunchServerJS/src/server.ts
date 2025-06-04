@@ -92,36 +92,7 @@ const server = serve({
 });
 
 console.log(`LaunchServerJS listening on ${server.hostname}:${server.port}`);
-=======
-import { handleMessage, BaseMessage } from "./network/protocol";
 
-serve({
-  port: 3000,
-  fetch(req, server) {
-    if (server.upgrade(req)) {
-      return undefined;
-    }
-    return new Response("WebSocket server only", { status: 400 });
-  },
-  websocket: {
-    open(ws) {
-      ws.send(JSON.stringify({ type: "welcome" }));
-    },
-    message(ws, data) {
-      try {
-        const msg: BaseMessage = JSON.parse(data.toString());
-        handleMessage(ws, msg);
-      } catch (err) {
-        ws.send(JSON.stringify({ type: "error", message: "Invalid JSON" }));
-      }
-    },
-    close(ws) {
-      // TODO: cleanup sessions
-    },
-  },
-});
-
-console.log("Server running on ws://localhost:3000");
 import { Logger } from './utils/log';
 
 process.on('uncaughtException', (err: unknown) => {
