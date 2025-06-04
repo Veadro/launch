@@ -1,7 +1,7 @@
 export enum MessageType {
   AUTHORISE = 'authorise',
   LOCATION_UPDATE = 'locationUpdate',
-  KEEP_ALIVE = 'keepAlive'
+  KEEP_ALIVE = 'keepAlive',
 }
 
 export interface BaseMessage {

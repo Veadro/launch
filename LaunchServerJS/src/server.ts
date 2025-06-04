@@ -1,4 +1,5 @@
 import { serve } from "bun";
+import { Logger } from "./utils/log";
 
 interface Session {
   id: number;
@@ -94,6 +95,7 @@ const server = serve({
 console.log(`LaunchServerJS listening on ${server.hostname}:${server.port}`);
 
 import { Logger } from './utils/log';
+  console.log(`LaunchServerJS listening on ${server.hostname}:${server.port}`);
 
 process.on('uncaughtException', (err: unknown) => {
   Logger.error(`Unhandled exception: ${err instanceof Error ? err.stack : err}`);

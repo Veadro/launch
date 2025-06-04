@@ -12,6 +12,11 @@ Aspirations are to randomize player locations each week and use mars instead of 
 | `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
 | `LaunchServerJS/wsbridge` | Node.js | `node server.js` | – |
 | `LaunchServerJS/mcp` | Node.js Express | `node index.js` | [openapi.yaml](LaunchServerJS/mcp/openapi.yaml) |
+
+| `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [network](docs/network.md) |
+| `wsbridge` | Node.js | `node server.js` | – |
+| `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
+| `server-ts` | TypeScript | `npm run build` | – |
 ## WebSocket Bridge
 
 A simple Node.js server under `LaunchServerJS/wsbridge/` exposes game actions over WebSockets and
@@ -55,6 +60,7 @@ Older versions of Launch relied on a custom binary protocol implemented in the
 offsets for each field. The new implementation uses JSON over WebSockets. This
 makes it much easier to inspect traffic and build tooling in other languages,
 while still keeping the payloads small thanks to Bun's native JSON handling.
+For a full list of message structures see [docs/network.md](docs/network.md).
 
 ## Running Tests
 
@@ -72,3 +78,10 @@ The `LaunchServerJS/mcp/` directory contains a lightweight Express service that 
 endpoints for managing games and missions. Endpoints are secured with a simple
 OAuth bearer token middleware. API documentation for these endpoints is
 available in `LaunchServerJS/mcp/openapi.yaml`.
+
+available in `mcp/openapi.yaml`.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
