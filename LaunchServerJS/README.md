@@ -6,15 +6,10 @@ To install dependencies:
 bun install
 ```
 
-To run:
-
-```bash
-bun run index.ts
-=======
 To run the development server:
 
 ```bash
-bun run src/server.ts
+bun run dev
 ```
 
 To build and run the bundled server:

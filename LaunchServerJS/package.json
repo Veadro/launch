@@ -1,12 +1,12 @@
 {
   "name": "launchserverjs",
-  "module": "./src/server.ts",
+  "module": "./src/index.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run ./src/server.ts",
-    "build": "bun build ./src/server.ts --outdir dist --target bun",
-    "start": "bun run ./dist/server.js"
+    "dev": "bun run ./src/index.ts",
+    "build": "bun build ./src/index.ts --outdir dist --target bun",
+    "start": "bun run ./dist/index.js"
   },
   "dependencies": {
     "express": "^5.1.0",

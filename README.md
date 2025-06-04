@@ -9,7 +9,7 @@ Aspirations are to randomize player locations each week and use mars instead of 
 |--------|----------|-----------------|------|
 | `LaunchServer` | Java (Ant) | `ant run` or open in NetBeans | [HOW TO DEPLOY](LaunchServer/HOW%20TO%20DEPLOY) |
 | `LaunchClient` | Android (Java/Kotlin) | `./gradlew assembleDebug` | – |
-| `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
+| `LaunchServerJS` | TypeScript with Bun | `bun run src/index.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
 | `wsbridge` | Node.js | `node server.js` | – |
 | `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
 | `server-ts` | TypeScript | `npm run build` | – |
@@ -32,22 +32,22 @@ The latest server implementation uses [Bun](https://bun.sh/) to provide a fast
 TypeScript runtime. To start the server in development mode run:
 
 ```bash
-bun run server.ts
+bun run src/index.ts
 ```
 
 By default the server listens on port `3000`. You can override this with the
 `PORT` environment variable:
 
 ```bash
-PORT=8080 bun run server.ts
+PORT=8080 bun run src/index.ts
 ```
 
 When deploying you may wish to build the project first. Bun can produce a
 single JavaScript bundle which can then be executed directly:
 
 ```bash
-bun build server.ts --outfile dist/server.js
-node dist/server.js
+bun build src/index.ts --outfile dist/index.js
+bun run dist/index.js
 ```
 ## Protocol Changes
 
