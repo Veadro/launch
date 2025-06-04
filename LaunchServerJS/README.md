@@ -4,16 +4,10 @@ A lightweight game server written with [Bun](https://bun.sh/).
 
 ## Getting Started
 
-Install dependencies:
+Install dependencies and start the development server:
 
 ```bash
 bun install
-```
-
-To run the development server:
-Run the development server:
-
-```bash
 bun run src/server.ts
 ```
 
@@ -23,6 +17,8 @@ Build and run the bundled server:
 bun run build
 bun run start
 ```
+
+The server entry file is [`src/server.ts`](src/server.ts).
 
 This project was created using `bun init` in bun v1.2.14. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
 
