@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: Launch Server API
+  version: 1.0.0
+paths:
+  /commands:
+    post:
+      summary: Submit commands to the server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              sample:
+                summary: Example request
+                value:
+                  commands:
+                    - move
+                    - attack
+      responses:
+        '200':
+          description: Command acknowledgement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+              examples:
+                sample:
+                  summary: Example response
+                  value:
+                    status: ok
+  /data:
+    get:
+      summary: Retrieve game data
+      responses:
+        '200':
+          description: Data payload
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: string
+              examples:
+                sample:
+                  summary: Example response
+                  value:
+                    data:
+                      - item1
+                      - item2
+components: {}
+tags: []
