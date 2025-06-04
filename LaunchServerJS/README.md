@@ -1,23 +1,22 @@
-# launchserverjs
+# LaunchServerJS
 
-To install dependencies:
+A lightweight game server written with [Bun](https://bun.sh/).
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
-
-```bash
-bun run index.ts
-=======
-To run the development server:
+Run the development server:
 
 ```bash
 bun run src/server.ts
 ```
 
-To build and run the bundled server:
+Build and run the bundled server:
 
 ```bash
 bun run build
@@ -30,3 +29,5 @@ Additional Node.js utilities can be found under this package:
 
 - **wsbridge** – simple WebSocket bridge exposing game actions
 - **mcp** – lightweight REST service with OAuth middleware
+See [docs/network.md](docs/network.md) for message format details.
+
