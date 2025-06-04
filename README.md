@@ -70,6 +70,8 @@ Tests for the Bun services can be executed with:
 bun test
 ```
 
+These tests also run automatically on GitHub Actions for each push and pull request.
+
 Existing Java modules still contain JUnit tests under `LaunchGame/test` which
 can be run with your preferred Java IDE or with Ant/NetBeans.
 ## MCP Service
