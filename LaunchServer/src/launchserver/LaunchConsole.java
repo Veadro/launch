@@ -1272,7 +1272,12 @@ public class LaunchConsole
         LaunchLog.ConsoleMessage("\n---------------------------");
     }
     
-    public boolean Quat()
+    /**
+     * Indicates whether the console has received a quit command.
+     *
+     * @return true if the console should quit.
+     */
+    public boolean Quit()
     {
         return bQuit;
     }
