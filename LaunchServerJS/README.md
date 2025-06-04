@@ -1,27 +1,28 @@
-# launchserverjs
+# LaunchServerJS
 
-To install dependencies:
+A lightweight game server written with [Bun](https://bun.sh/).
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
-
-```bash
-bun run index.ts
-=======
-To run the development server:
+Run the development server:
 
 ```bash
 bun run src/server.ts
 ```
 
-To build and run the bundled server:
+Build and run the bundled server:
 
 ```bash
 bun run build
 bun run start
 ```
 
-This project was created using `bun init` in bun v1.2.14. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+See [docs/network.md](docs/network.md) for message format details.
+
+This project was created using `bun init`.

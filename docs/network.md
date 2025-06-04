@@ -4,6 +4,16 @@ LaunchServerJS communicates using JSON encoded messages. Each message includes a
 `type` field which replaces the numeric message identifiers used in the legacy
 Java implementation. The protocol currently defines the following messages:
 
+## MessageType
+
+```ts
+enum MessageType {
+  AUTHORISE = 'authorise',
+  LOCATION_UPDATE = 'locationUpdate',
+  KEEP_ALIVE = 'keepAlive',
+}
+```
+
 ## BaseMessage
 ```ts
 interface BaseMessage {
@@ -22,6 +32,12 @@ interface AuthoriseMessage extends BaseMessage {
 Sent by a client when connecting to the server. The server verifies the device
 and game version before allowing further communication.
 
+Example:
+
+```json
+{ "type": "authorise", "deviceId": "abc", "version": "1.0.0" }
+```
+
 ## LocationUpdateMessage
 ```ts
 interface LocationUpdateMessage extends BaseMessage {
@@ -32,6 +48,12 @@ interface LocationUpdateMessage extends BaseMessage {
 ```
 Periodic location update from the client.
 
+Example:
+
+```json
+{ "type": "locationUpdate", "latitude": 51.5, "longitude": -0.1 }
+```
+
 ## KeepAliveMessage
 ```ts
 interface KeepAliveMessage extends BaseMessage {
@@ -39,6 +61,27 @@ interface KeepAliveMessage extends BaseMessage {
 }
 ```
 Used when no other data needs to be sent to maintain the connection.
+
+Example:
+
+```json
+{ "type": "keepAlive" }
+```
+
+## AuthorisedMessage
+
+```ts
+interface AuthorisedMessage extends BaseMessage {
+  type: 'authorised';
+}
+```
+Sent by the server in response to a successful `AuthoriseMessage`.
+
+Example:
+
+```json
+{ "type": "authorised" }
+```
 
 ## Serialisation
 
