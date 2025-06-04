@@ -10,6 +10,7 @@ Install dependencies:
 bun install
 ```
 
+To run the development server:
 Run the development server:
 
 ```bash
@@ -29,5 +30,5 @@ Additional Node.js utilities can be found under this package:
 
 - **wsbridge** – simple WebSocket bridge exposing game actions
 - **mcp** – lightweight REST service with OAuth middleware
-See [docs/network.md](docs/network.md) for message format details.
 
+See [docs/network.md](docs/network.md) for message format details.

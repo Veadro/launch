@@ -12,6 +12,7 @@ Aspirations are to randomize player locations each week and use mars instead of 
 | `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [docs](LaunchServerJS/docs) |
 | `LaunchServerJS/wsbridge` | Node.js | `node server.js` | – |
 | `LaunchServerJS/mcp` | Node.js Express | `node index.js` | [openapi.yaml](LaunchServerJS/mcp/openapi.yaml) |
+
 | `LaunchServerJS` | TypeScript with Bun | `bun run src/server.ts` | [README](LaunchServerJS/README.md), [network](docs/network.md) |
 | `wsbridge` | Node.js | `node server.js` | – |
 | `mcp` | Node.js Express | `node index.js` | [openapi.yaml](mcp/openapi.yaml) |
@@ -35,21 +36,21 @@ The latest server implementation uses [Bun](https://bun.sh/) to provide a fast
 TypeScript runtime. To start the server in development mode run:
 
 ```bash
-bun run server.ts
+bun run src/server.ts
 ```
 
 By default the server listens on port `3000`. You can override this with the
 `PORT` environment variable:
 
 ```bash
-PORT=8080 bun run server.ts
+PORT=8080 bun run src/server.ts
 ```
 
 When deploying you may wish to build the project first. Bun can produce a
 single JavaScript bundle which can then be executed directly:
 
 ```bash
-bun build server.ts --outfile dist/server.js
+bun build src/server.ts --outfile dist/server.js
 node dist/server.js
 ```
 ## Protocol Changes
@@ -77,6 +78,7 @@ The `LaunchServerJS/mcp/` directory contains a lightweight Express service that 
 endpoints for managing games and missions. Endpoints are secured with a simple
 OAuth bearer token middleware. API documentation for these endpoints is
 available in `LaunchServerJS/mcp/openapi.yaml`.
+
 available in `mcp/openapi.yaml`.
 
 ## License
