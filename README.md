@@ -73,3 +73,8 @@ The `mcp/` directory contains a lightweight Express service that exposes REST
 endpoints for managing games and missions. Endpoints are secured with a simple
 OAuth bearer token middleware. API documentation for these endpoints is
 available in `mcp/openapi.yaml`.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
